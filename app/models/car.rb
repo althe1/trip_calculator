@@ -1,4 +1,4 @@
 class Car < ActiveRecord::Base
   belongs_to :user
-  validates_presence_of :odometer
+  validates_presence_of :name, :odometer
 end
