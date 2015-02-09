@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    # Check to see if user parameters are valid and are saved
+
     if @user.valid? && @user.save
       redirect_to cars_path
     else
@@ -15,6 +17,8 @@ class UsersController < ApplicationController
 
   end
 
+  # Parameters required to create a new user
+  
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end

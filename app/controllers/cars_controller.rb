@@ -47,6 +47,8 @@ class CarsController < ApplicationController
 
   end
 
+  # Parameters required to create a new car
+
   def car_params
     params.require(:car).permit(:name, :odometer)
   end
