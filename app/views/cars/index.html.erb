@@ -1,3 +1,38 @@
-<table class="table table-striped">
-  
-</table>
+<!-- Table of Cars and Odometer -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+    <!-- Heading -->
+
+      <h1>Cars</h1>
+      <table class="table table-striped">
+
+          <!-- Titles of columns -->
+
+          <thead>
+            <th>Name</th>
+            <th>Odometer</th>
+          </thead>
+            
+            <!-- List of all Cars -->
+
+            <tbody>
+              <% @cars.each do |c| %>
+                <tr>
+                  <td><%= c.name %></td>
+                  <td><%= c.odometer %></td>
+                  <td><%= link_to 'Edit', edit_car_path(c), class: "btn btn-warning" %>  <%= link_to 'Delete', c, method: :delete, class: "btn btn-danger" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+
+      </table>
+
+      <!-- Button to add car -->
+      
+      <%= link_to "Add Car", new_car_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
