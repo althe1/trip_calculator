@@ -8,7 +8,7 @@
       
       <!-- Form to edit a Car -->
 
-      <%= form_for @car do |f| %>
+      <%= form_for [@user, @car] do |f| %>
         <div class="form-group">
           <%= f.text_field :name, class: "form-control", placeholder: "Enter name"%>
         </div>
@@ -19,7 +19,7 @@
 
           <!-- Button to edit car and go back to Cars -->
           
-          <%= f.submit 'Edit Car', class: "btn btn-success"%> <%= link_to "Back to Cars", cars_path, class: "btn btn-default" %>
+          <%= f.submit 'Edit Car', class: "btn btn-success"%> <%= link_to "Back to Cars", user_cars_path(params[:user_id]), class: "btn btn-default" %>
         </div>
       <% end %>
       

@@ -1,3 +1,4 @@
+
 <!-- Table of Cars and Odometer -->
 
 <div class="container">
@@ -23,7 +24,7 @@
                 <tr>
                   <td><%= c.name %></td>
                   <td><%= c.odometer %></td>
-                  <td><%= link_to 'Edit', edit_car_path(c), class: "btn btn-warning" %>  <%= link_to 'Delete', c, method: :delete, class: "btn btn-danger" %></td>
+                  <td><%= link_to 'Edit', edit_user_car_path(params[:user_id], c), class: "btn btn-warning" %>  <%= link_to 'Delete', user_car_path(params[:user_id], c), method: :delete, class: "btn btn-danger" %></td>
                 </tr>
               <% end %>
             </tbody>
@@ -32,7 +33,7 @@
 
       <!-- Button to add car -->
       
-      <%= link_to "Add Car", new_car_path, class: "btn btn-success" %>
+      <%= link_to "Add Car", new_user_car_path(user_id: params[:user_id]), class: "btn btn-success" %>
     </div>
   </div>
 </div>

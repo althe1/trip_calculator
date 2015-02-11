@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+
+    # Finds User with email
+
     user = User.find_by(email: params[:user][:email])
 
     # Login authentication check to see if email and password are valid
@@ -14,7 +17,7 @@ class SessionsController < ApplicationController
 
       flash[:success] = "You signed in successfully!"
       session[:user_id] = user.id
-      redirect_to cars_path
+      redirect_to user_cars_path(user_id: user.id)
     else
 
       # Incorrect Login Information Alert

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   # Standard routes for users and cars
-  resources :users
-  resources :cars
+  resources :users do
+    resources :cars
+  end
 
   # The index page of Trip Calculator is the Sign Up Page
   root to: "users#new"

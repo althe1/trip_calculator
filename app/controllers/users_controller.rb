@@ -10,7 +10,8 @@ class UsersController < ApplicationController
     # Check to see if user parameters are valid and are saved
 
     if @user.valid? && @user.save
-      redirect_to cars_path
+      session[:user_id] = @user.id
+      redirect_to user_cars_path(user_id: @user.id)
     else
       render :new
     end
